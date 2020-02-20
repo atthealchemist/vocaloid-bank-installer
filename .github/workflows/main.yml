@@ -20,8 +20,3 @@ jobs:
       - name: Bundle
         run: |
           python -m PyInstaller main.py --onefile -n VocaloidBankInstaller
-      - name: Github Release
-        uses: elgohr/Github-Release-Action@v3.1
-        with:
-          # The name of the release to publish
-          release: VocaloidBankInstaller
