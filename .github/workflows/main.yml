@@ -20,8 +20,8 @@ jobs:
       - name: Bundle
         run: |
           python -m PyInstaller main.py --onefile -n VocaloidBankInstaller
-      - name: Download artifact
-        uses: actions/download-artifact@v1.0.0
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1.0.0
         with:
           # Artifact name
           name: VocaloidBankInstaller
