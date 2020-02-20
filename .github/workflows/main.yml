@@ -26,4 +26,4 @@ jobs:
           # Artifact name
           name: VocaloidBankInstaller
           # Destination path
-#           path: dist/VocaloidBankInstaller.exe # optional
+          path: Output/VocaloidBankInstaller.exe # optional
