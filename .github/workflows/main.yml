@@ -1,0 +1,27 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyInstaller
+      - name: Bundle
+        run: |
+          python -m PyInstaller main.py --onefile -n VocaloidBankInstaller
+      - name: Github Release
+        uses: elgohr/Github-Release-Action@v3.1
+        with:
+          # The name of the release to publish
+          release: VocaloidBankInstaller
